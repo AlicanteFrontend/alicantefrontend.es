@@ -1,40 +1,28 @@
 {
-  "name": "alicantefrontend.github.io",
-  "version": "1.0.0",
-  "description": "El ecosistema Frontend es un caos y ¡nos encanta! Si quieres aprender y compartir sobre desarrollo web orientado al Frontend has llegado al sitio correcto.",
-  "main": "index.js",
+  "name": "alicantefrontend.es",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Zombispormedio/alicantefrontend.github.io.git"
+  "dependencies": {
+    "@iconify-json/lucide": "^1.2.102",
+    "@iconify-json/simple-icons": "^1.2.79",
+    "@tailwindcss/vite": "^4.2.4",
+    "astro": "^6.1.8",
+    "astro-icon": "^1.1.5",
+    "astro-og-canvas": "^0.11.1",
+    "canvaskit-wasm": "^0.41.1",
+    "tailwindcss": "^4.2.4"
   },
-  "keywords": [
-    "frontend",
-    "website",
-    "Alicante"
-  ],
-  "author": "Alicante Frontend",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Zombispormedio/alicantefrontend.github.io/issues"
-  },
-  "homepage": "https://github.com/Zombispormedio/alicantefrontend.github.io#readme",
+  "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319",
   "devDependencies": {
-    "husky": "^1.1.2",
-    "lint-staged": "^7.3.0",
-    "prettier": "^1.14.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,json,css,md}": [
-      "prettier --write",
-      "git add"
-    ]
+    "@tailwindcss/typography": "^0.5.19"
   }
 }

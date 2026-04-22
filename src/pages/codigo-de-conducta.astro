@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Content } from '../../CODE_OF_CONDUCT.md';
+import { Icon } from 'astro-icon/components';
+---
+
+<Layout title="Código de conducta — Alicante Frontend">
+	<main class="mx-auto max-w-3xl px-5 py-12 pb-20">
+		<a
+			href="/"
+			class="group mb-8 inline-flex items-center gap-2 text-sm font-semibold text-brand transition-colors hover:text-brand-dark"
+		>
+			<Icon name="lucide:arrow-left" class="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1" />
+			Volver al inicio
+		</a>
+
+		<article class="prose prose-lg max-w-none prose-headings:text-ink prose-headings:font-bold prose-a:text-brand hover:prose-a:text-brand-dark prose-strong:text-ink">
+			<Content />
+		</article>
+	</main>
+</Layout>

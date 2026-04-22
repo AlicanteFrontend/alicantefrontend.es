@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+
+const links = [
+	{
+		href: 'https://www.meetup.com/es-ES/Alicante-Frontend',
+		icon: 'lucide:calendar-days',
+		label: 'Próximos eventos',
+	},
+	{
+		href: 'mailto:alicante.frontend@gmail.com',
+		icon: 'lucide:mail',
+		label: 'Escríbenos',
+	},
+	{
+		href: '/discord',
+		icon: 'simple-icons:discord',
+		label: 'Únete a Discord',
+	},
+	{
+		href: 'https://twitter.com/AlicanteFront',
+		icon: 'simple-icons:x',
+		label: 'Síguenos en X',
+	},
+	{
+		href: 'https://www.youtube.com/AlicanteFrontend',
+		icon: 'lucide:youtube',
+		label: 'Suscríbete al canal',
+	},
+];
+---
+
+<Layout title="Alicante Frontend — Comunidad frontend de Alicante">
+	<main class="flex min-h-screen flex-col items-center justify-center px-5 py-10 pb-16">
+		<h1 class="sr-only">Alicante Frontend</h1>
+
+		<img
+			src="/alicante-frontend-logo.svg"
+			alt="Alicante Frontend Logo"
+			class="mb-5 block h-auto w-[540px] max-w-[90%] animate-fade-up [animation:drift_8s_ease-in-out_infinite]"
+		/>
+
+		<p class="max-w-2xl px-4 text-center text-[1.1rem] text-[#4a5a73] mb-12 animate-fade-up [animation-delay:150ms]">
+			El ecosistema Frontend es un caos y
+			<strong class="font-bold text-ink">¡nos encanta!</strong>
+			Si quieres aprender y compartir sobre desarrollo web orientado al Frontend has llegado al sitio correcto.
+		</p>
+
+		<ul class="grid w-full max-w-[1200px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4 animate-fade-up [animation-delay:300ms] list-none p-0">
+			{links.map(({ href, icon, label }) => (
+				<li>
+					<a
+						target="_blank"
+						rel="noopener noreferrer"
+						href={href}
+						class="group flex min-h-[130px] flex-col items-center justify-center gap-2.5 border border-brand/15 bg-white/80 px-3 py-6 text-center text-[0.95rem] font-semibold text-ink shadow-[0_12px_30px_rgba(24,133,214,0.1)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-brand/40 hover:bg-white hover:shadow-[0_22px_45px_rgba(24,133,214,0.22)]"
+					>
+						<Icon name={icon} class="h-8 w-8 text-brand transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6" />
+						<span class="whitespace-nowrap">{label}</span>
+					</a>
+				</li>
+			))}
+		</ul>
+
+		<div class="mt-16 max-w-[640px] text-center animate-fade-up [animation-delay:450ms]">
+			<p class="mb-6 text-base text-[#4a5a73]">
+				¿Tienes algo que contar? Buscamos personas que quieran compartir su
+				experiencia con la comunidad. Da igual si es tu primera charla o si
+				llevas años en esto: ¡nos encantaría escucharte!
+			</p>
+			<a
+				href="/cfp"
+				class="group inline-flex items-center gap-2  bg-brand px-7 py-3.5 text-[0.95rem] font-semibold text-white shadow-[0_8px_20px_rgba(24,133,214,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-dark hover:text-white hover:shadow-[0_14px_28px_rgba(24,133,214,0.4)]"
+			>
+				Proponer una charla
+				<Icon name="lucide:arrow-right" class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+			</a>
+		</div>
+
+		<footer class="mt-16 flex flex-col items-center gap-3 text-center text-sm font-medium text-[#4a5a73] animate-fade-up [animation-delay:600ms]">
+			<a href="/codigo-de-conducta" class="text-brand hover:text-brand-dark transition-colors">
+				Código de conducta
+			</a>
+			<span>
+				Hecho con <span class="inline-block animate-pulse-heart text-[#ff5b7f]">♥</span> en Alicante
+			</span>
+		</footer>
+	</main>
+</Layout>
