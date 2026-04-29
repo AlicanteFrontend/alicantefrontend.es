@@ -1,11 +1,83 @@
 ---
 import '../styles/global.css';
+import { Schema } from 'astro-seo-schema';
+import type { Graph } from 'schema-dts';
 
 interface Props {
 	title?: string;
 }
 
 const { title = 'Alicante Frontend' } = Astro.props;
+
+const siteUrl = 'https://alicantefrontend.es';
+const description =
+	'El ecosistema Frontend es un caos y ¡nos encanta! Si quieres aprender y compartir sobre desarrollo web orientado al Frontend has llegado al sitio correcto.';
+
+const jsonLd: Graph = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'Organization',
+			'@id': `${siteUrl}/#organization`,
+			name: 'Alicante Frontend',
+			url: `${siteUrl}/`,
+			logo: `${siteUrl}/alicante-frontend-logo.svg`,
+			image: `${siteUrl}/og.png`,
+			description,
+			email: 'alicante.frontend@gmail.com',
+			foundingDate: '2017-10-02',
+			sameAs: [
+				'https://x.com/AlicanteFront',
+				'https://www.youtube.com/AlicanteFrontend',
+				'https://www.meetup.com/es-ES/Alicante-Frontend',
+			],
+			location: {
+				'@type': 'Place',
+				name: 'Alicante',
+				address: {
+					'@type': 'PostalAddress',
+					addressLocality: 'Alicante',
+					addressRegion: 'Comunidad Valenciana',
+					addressCountry: 'ES',
+				},
+			},
+		},
+		{
+			'@type': 'WebSite',
+			'@id': `${siteUrl}/#website`,
+			url: `${siteUrl}/`,
+			name: 'Alicante Frontend',
+			description,
+			inLanguage: 'es-ES',
+			publisher: { '@id': `${siteUrl}/#organization` },
+		},
+		{
+			'@type': 'EventSeries',
+			'@id': `${siteUrl}/#event-series`,
+			name: 'Alicante Frontend Meetups',
+			description: 'Meetup mensual sobre desarrollo web frontend en Alicante.',
+			url: `${siteUrl}/`,
+			image: `${siteUrl}/og.png`,
+			startDate: '2017-10-02',
+			inLanguage: 'es-ES',
+			organizer: { '@id': `${siteUrl}/#organization` },
+			location: {
+				'@type': 'Place',
+				name: 'Alicante',
+				address: {
+					'@type': 'PostalAddress',
+					addressLocality: 'Alicante',
+					addressRegion: 'Comunidad Valenciana',
+					addressCountry: 'ES',
+				},
+			},
+			eventSchedule: {
+				'@type': 'Schedule',
+				repeatFrequency: 'P1M',
+			},
+		},
+	],
+};
 ---
 
 <!doctype html>
@@ -45,6 +117,7 @@ const { title = 'Alicante Frontend' } = Astro.props;
 		<meta property="og:locale" content="es_ES" />
 
 		<script src="https://cdn.usefathom.com/script.js" data-site="FRZKPXBX" defer></script>
+		<Schema item={jsonLd} />
 	</head>
 	<body>
 		<slot />

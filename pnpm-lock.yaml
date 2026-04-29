@@ -19,16 +19,22 @@ importers:
         version: 4.2.4(vite@7.3.2(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0))
       astro:
         specifier: ^6.1.8
-        version: 6.1.8(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)
+        version: 6.1.8(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(typescript@5.9.3)
       astro-icon:
         specifier: ^1.1.5
         version: 1.1.5
       astro-og-canvas:
         specifier: ^0.11.1
-        version: 0.11.1(astro@6.1.8(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2))
+        version: 0.11.1(astro@6.1.8(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(typescript@5.9.3))
+      astro-seo-schema:
+        specifier: ^6.0.0
+        version: 6.0.0(astro@6.1.8(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(typescript@5.9.3))(schema-dts@1.1.5)
       canvaskit-wasm:
         specifier: ^0.41.1
         version: 0.41.1
+      schema-dts:
+        specifier: ^1.1.5
+        version: 1.1.5
       tailwindcss:
         specifier: ^4.2.4
         version: 4.2.4
@@ -775,6 +781,12 @@ packages:
     resolution: {integrity: sha512-6omy7MJeOPwxdYH5+eL3zFIY9MhuDRUMuASuCx/eXNrHGUogq9ZHdx19A428KtWhLVuXVcLt7Klw5fxqASAHmg==}
     peerDependencies:
       astro: ^5.0.0 || ^6.0.0-alpha
+
+  astro-seo-schema@6.0.0:
+    resolution: {integrity: sha512-6Etg+9zu7XdlUa40BIZrZP3vd+lReeJ1rNgT8Jer+1bPyGdrA/itQwJOhIkX+t5PadVwTmpt6xZouDycrZys6w==}
+    peerDependencies:
+      astro: ^6.0.0
+      schema-dts: ^1.1.0
 
   astro@6.1.8:
     resolution: {integrity: sha512-6fT9M12U3fpi13DiPavNKDIoBflASTSxmKTEe+zXhWtlebQuOqfOnIrMWyRmlXp+mgDsojmw+fVFG9LUTzKSog==}
@@ -1575,6 +1587,9 @@ packages:
     resolution: {integrity: sha512-6R3J5M4AcbtLUdZmRv2SygeVaM7IhrLXu9BmnOGmmACak8fiUtOsYNWUS4uK7upbmHIBbLBeFeI//477BKLBzA==}
     engines: {node: '>=11.0.0'}
 
+  schema-dts@1.1.5:
+    resolution: {integrity: sha512-RJr9EaCmsLzBX2NDiO5Z3ux2BVosNZN5jo0gWgsyKvxKIUL5R3swNvoorulAeL9kLB0iTSX7V6aokhla2m7xbg==}
+
   semver@7.7.4:
     resolution: {integrity: sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA==}
     engines: {node: '>=10'}
@@ -1663,6 +1678,11 @@ packages:
 
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
+
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
 
   ufo@1.6.3:
     resolution: {integrity: sha512-yDJTmhydvl5lJzBmy/hyOAA0d+aqCBuwl818haVdYCRrWV84o7YyeVm4QlVHStqNrrJSTb6jKuFAVqAFsr+K3Q==}
@@ -2456,14 +2476,19 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro-og-canvas@0.11.1(astro@6.1.8(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)):
+  astro-og-canvas@0.11.1(astro@6.1.8(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(typescript@5.9.3)):
     dependencies:
-      astro: 6.1.8(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)
+      astro: 6.1.8(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(typescript@5.9.3)
       canvaskit-wasm: 0.41.1
       deterministic-object-hash: 2.0.2
       entities: 8.0.0
 
-  astro@6.1.8(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2):
+  astro-seo-schema@6.0.0(astro@6.1.8(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(typescript@5.9.3))(schema-dts@1.1.5):
+    dependencies:
+      astro: 6.1.8(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(typescript@5.9.3)
+      schema-dts: 1.1.5
+
+  astro@6.1.8(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(typescript@5.9.3):
     dependencies:
       '@astrojs/compiler': 3.0.1
       '@astrojs/internal-helpers': 0.8.0
@@ -2508,7 +2533,7 @@ snapshots:
       tinyclip: 0.1.12
       tinyexec: 1.1.1
       tinyglobby: 0.2.16
-      tsconfck: 3.1.6
+      tsconfck: 3.1.6(typescript@5.9.3)
       ultrahtml: 1.6.0
       unifont: 0.7.4
       unist-util-visit: 5.1.0
@@ -3632,6 +3657,8 @@ snapshots:
 
   sax@1.6.0: {}
 
+  schema-dts@1.1.5: {}
+
   semver@7.7.4: {}
 
   sharp@0.34.5:
@@ -3739,9 +3766,14 @@ snapshots:
 
   trough@2.2.0: {}
 
-  tsconfck@3.1.6: {}
+  tsconfck@3.1.6(typescript@5.9.3):
+    optionalDependencies:
+      typescript: 5.9.3
 
   tslib@2.8.1:
+    optional: true
+
+  typescript@5.9.3:
     optional: true
 
   ufo@1.6.3: {}
