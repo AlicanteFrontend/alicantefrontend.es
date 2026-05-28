@@ -24,9 +24,29 @@ const links = [
 		label: 'Síguenos en X',
 	},
 	{
+		href: 'https://www.instagram.com/alicantefrontend/',
+		icon: 'simple-icons:instagram',
+		label: 'Síguenos en Instagram',
+	},
+	{
+		href: 'https://www.linkedin.com/company/alicante-frontend/',
+		icon: 'simple-icons:linkedin',
+		label: 'Síguenos en LinkedIn',
+	},
+	{
 		href: 'https://www.youtube.com/AlicanteFrontend',
 		icon: 'lucide:youtube',
 		label: 'Suscríbete al canal',
+	},
+	{
+		href: 'https://github.com/AlicanteFrontend',
+		icon: 'simple-icons:github',
+		label: 'GitHub',
+	},
+	{
+		icon: 'simple-icons:telegram',
+		label: 'Telegram',
+		disabled: true,
 	},
 ];
 ---
@@ -47,18 +67,26 @@ const links = [
 			Si quieres aprender y compartir sobre desarrollo web orientado al Frontend has llegado al sitio correcto.
 		</p>
 
-		<ul class="grid w-full max-w-[1200px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4 animate-fade-up [animation-delay:300ms] list-none p-0">
-			{links.map(({ href, icon, label }) => (
+		<ul class="flex flex-col sm:flex-row flex-wrap justify-center w-full max-w-[1200px] gap-4 animate-fade-up [animation-delay:300ms] list-none p-0">
+			{links.map(({ href, icon, label, disabled }) => (
 				<li>
-					<a
-						target="_blank"
-						rel="noopener noreferrer"
-						href={href}
-						class="group flex min-h-[130px] flex-col items-center justify-center gap-2.5 border border-brand/15 bg-white/80 px-3 py-6 text-center text-[0.95rem] font-semibold text-ink shadow-[0_12px_30px_rgba(24,133,214,0.1)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-brand/40 hover:bg-white hover:shadow-[0_22px_45px_rgba(24,133,214,0.22)]"
-					>
-						<Icon name={icon} class="h-8 w-8 text-brand transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6" />
-						<span class="whitespace-nowrap">{label}</span>
-					</a>
+					{disabled ? (
+						<div class="sm:w-56 relative flex min-h-[130px] flex-col items-center justify-center gap-2.5 border border-dashed border-brand/15 bg-white/40 px-3 py-6 text-center text-[0.95rem] font-semibold text-ink/40">
+							<Icon name={icon} class="h-8 w-8 text-brand/30" />
+							<span class="whitespace-nowrap">{label}</span>
+							<span class="absolute bottom-4 text-xs font-normal text-brand/50">Próximamente</span>
+						</div>
+					) : (
+						<a
+							target="_blank"
+							rel="noopener noreferrer"
+							href={href}
+							class="sm:w-56 group flex min-h-[130px] flex-col items-center justify-center gap-2.5 border border-brand/15 bg-white/80 px-3 py-6 text-center text-[0.95rem] font-semibold text-ink shadow-[0_12px_30px_rgba(24,133,214,0.1)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-brand/40 hover:bg-white hover:shadow-[0_22px_45px_rgba(24,133,214,0.22)]"
+						>
+							<Icon name={icon} class="h-8 w-8 text-brand transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6" />
+							<span class="whitespace-nowrap">{label}</span>
+						</a>
+					)}
 				</li>
 			))}
 		</ul>
