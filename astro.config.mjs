@@ -14,6 +14,10 @@ export default defineConfig({
     '/discord': {
       status: 302,
       destination: 'https://discord.gg/RTsac4dkmg'
+    },
+    '/telegram': {
+      status: 302,
+      destination: 'https://t.me/alicantefrontend'
     }
   },
   vite: {
