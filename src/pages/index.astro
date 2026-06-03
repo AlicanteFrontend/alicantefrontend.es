@@ -19,6 +19,14 @@ const links = [
 		label: 'Escríbenos',
 	},
 	{
+		href: 'https://www.linkedin.com/company/alicante-frontend/',
+		icon: 'simple-icons:linkedin',
+		label: 'Síguenos en LinkedIn',
+	},
+];
+
+const socialLinks = [
+	{
 		href: 'https://twitter.com/AlicanteFront',
 		icon: 'simple-icons:x',
 		label: 'Síguenos en X',
@@ -29,20 +37,15 @@ const links = [
 		label: 'Síguenos en Instagram',
 	},
 	{
-		href: 'https://www.linkedin.com/company/alicante-frontend/',
-		icon: 'simple-icons:linkedin',
-		label: 'Síguenos en LinkedIn',
-	},
-	{
 		href: 'https://www.youtube.com/AlicanteFrontend',
-		icon: 'lucide:youtube',
+		icon: 'simple-icons:youtube',
 		label: 'Suscríbete al canal',
 	},
 	{
 		href: 'https://github.com/AlicanteFrontend',
 		icon: 'simple-icons:github',
 		label: 'GitHub',
-	}
+	},
 ];
 ---
 
@@ -56,7 +59,7 @@ const links = [
 			class="mb-5 block h-auto w-[540px] max-w-[90%] animate-fade-up [animation:drift_8s_ease-in-out_infinite]"
 		/>
 
-		<p class="max-w-2xl px-4 text-center text-[1.1rem] text-[#4a5a73] mb-12 animate-fade-up [animation-delay:150ms]">
+		<p class="max-w-2xl px-4 text-center text-[1.1rem] text-muted mb-12 animate-fade-up [animation-delay:150ms]">
 			El ecosistema Frontend es un caos y
 			<strong class="font-bold text-ink">¡nos encanta!</strong>
 			Si quieres aprender y compartir sobre desarrollo web orientado al Frontend has llegado al sitio correcto.
@@ -86,8 +89,28 @@ const links = [
 			))}
 		</ul>
 
+		<div class="mt-8 flex flex-col items-center gap-4 text-center font-medium text-muted animate-fade-up [animation-delay:450ms]">
+			<p class="m-0 text-base text-muted">Encuéntranos también en:</p>
+			<ul class="flex items-center justify-center gap-5 list-none p-0 m-0">
+				{socialLinks.map(({ href, icon, label }) => (
+					<li>
+						<a
+							target="_blank"
+							rel="noopener noreferrer"
+							href={href}
+							aria-label={label}
+							title={label}
+							class="group flex h-12 w-12 items-center justify-center rounded-full text-brand/60 transition-all duration-300 hover:-translate-y-0.5 hover:text-brand"
+						>
+							<Icon name={icon} class="h-7 w-7 transition-transform duration-300 group-hover:scale-110" />
+						</a>
+					</li>
+				))}
+			</ul>
+		</div>
+
 		<div class="mt-16 max-w-[640px] text-center animate-fade-up [animation-delay:450ms]">
-			<p class="mb-6 text-base text-[#4a5a73]">
+			<p class="mb-6 text-base text-muted">
 				¿Tienes algo que contar? Buscamos personas que quieran compartir su
 				experiencia con la comunidad. Da igual si es tu primera charla o si
 				llevas años en esto: ¡nos encantaría escucharte!
@@ -101,7 +124,7 @@ const links = [
 			</a>
 		</div>
 
-		<footer class="mt-16 flex flex-col items-center gap-3 text-center text-sm font-medium text-[#4a5a73] animate-fade-up [animation-delay:600ms]">
+		<footer class="mt-16 flex flex-col items-center gap-3 text-center text-sm font-medium text-muted animate-fade-up [animation-delay:600ms]">
 			<a href="/codigo-de-conducta" class="text-brand hover:text-brand-dark transition-colors">
 				Código de conducta
 			</a>
