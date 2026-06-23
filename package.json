@@ -12,19 +12,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.111",
-    "@iconify-json/simple-icons": "^1.2.85",
-    "@tailwindcss/vite": "^4.3.0",
-    "astro": "^6.4.3",
+    "@iconify-json/lucide": "^1.2.114",
+    "@iconify-json/simple-icons": "^1.2.87",
+    "@tailwindcss/vite": "^4.3.1",
+    "astro": "^7.0.0",
     "astro-icon": "^1.1.5",
     "astro-og-canvas": "^0.11.1",
-    "astro-seo-schema": "^6.0.0",
+    "astro-seo-schema": "^7.0.0",
     "canvaskit-wasm": "^0.41.1",
     "schema-dts": "^2.0.0",
-    "tailwindcss": "^4.3.0"
+    "tailwindcss": "^4.3.1"
   },
   "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319",
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.19"
+    "@tailwindcss/typography": "^0.5.20"
   }
 }
