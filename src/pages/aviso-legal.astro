@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import { organization as org } from '../data/organization';
+---
+
+<Layout title="Aviso legal y privacidad — Alicante Frontend" description="Aviso legal y política de privacidad de Alicante Frontend." page="legal">
+	<PageHero title="Aviso legal y privacidad" />
+
+	<main class="mx-auto max-w-3xl px-5 py-12 pb-20">
+		<article class="prose prose-lg max-w-none prose-headings:text-ink prose-headings:font-bold prose-a:text-brand hover:prose-a:text-brand-dark prose-strong:text-ink">
+			<h2>Titular del sitio web</h2>
+			<p>
+				En cumplimiento de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE),
+				se informa de que el titular de este sitio web es <strong>{org.name}</strong>, asociación sin ánimo de lucro con
+				NIF {org.taxId}, inscrita en el {org.registry.es}, y con domicilio social en {org.address.es}.
+				Correo electrónico: <a href={`mailto:${org.email}`}>{org.email}</a>.
+			</p>
+
+			<h2>Objeto</h2>
+			<p>
+				Este sitio web informa sobre la asociación, su misión y las actividades que organiza.
+				El acceso es gratuito y no requiere registro.
+			</p>
+
+			<h2>Protección de datos</h2>
+			<p>
+				Este sitio web no recoge datos personales mediante formularios ni utiliza cookies. Para medir las visitas usamos
+				Fathom Analytics, que no emplea cookies ni almacena datos personales.
+			</p>
+			<p>
+				Si nos escribes por correo electrónico, trataremos tus datos únicamente para responder a tu consulta, de acuerdo con el
+				Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD). Puedes ejercer tus derechos de acceso, rectificación,
+				supresión, oposición, limitación y portabilidad escribiendo a <a href={`mailto:${org.email}`}>{org.email}</a>.
+			</p>
+			<p>
+				Las inscripciones a eventos y las propuestas de charlas se gestionan a través de servicios de terceros (Meetup, Google Forms),
+				sujetos a sus propias políticas de privacidad.
+			</p>
+
+			<h2>Propiedad intelectual</h2>
+			<p>
+				Los contenidos, logotipos y elementos gráficos de este sitio pertenecen a {org.name} o a sus respectivos autores.
+				Las charlas publicadas pertenecen a sus ponentes.
+			</p>
+		</article>
+	</main>
+</Layout>

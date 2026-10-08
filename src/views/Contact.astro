@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import { Icon } from 'astro-icon/components';
+import { organization as org, social } from '../data/organization';
+import { useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const copy = {
+	es: {
+		title: 'Contacto — Alicante Frontend',
+		description: 'Contacta con Alicante Frontend para colaborar, patrocinar, ceder un espacio o proponer una charla.',
+		heading: 'Contacto',
+		lead: '¿Quieres colaborar, ceder un espacio, patrocinar un evento o dar una charla? Escríbenos.',
+		email: 'Escríbenos',
+		social: 'Redes',
+		office: 'Domicilio social',
+	},
+	en: {
+		title: 'Contact — Alicante Frontend',
+		description: 'Get in touch with Alicante Frontend to collaborate, sponsor an event, provide a venue or submit a talk.',
+		heading: 'Contact',
+		lead: 'Want to collaborate, provide a venue, sponsor an event or give a talk? Get in touch.',
+		email: 'Email us',
+		social: 'Social media',
+		office: 'Registered office',
+	},
+}[lang];
+---
+
+<Layout title={copy.title} description={copy.description} lang={lang} page="contact">
+	<PageHero title={copy.heading} lead={copy.lead} />
+
+	<main class="mx-auto grid max-w-5xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2">
+		<section aria-labelledby="email">
+			<h2 id="email" class="m-0 mb-5 text-2xl font-extrabold text-ink">{copy.email}</h2>
+			<a href={`mailto:${org.email}`} class="flex items-center gap-4 border border-brand/15 p-4 transition-colors hover:border-brand/40">
+				<Icon name="lucide:mail" class="h-6 w-6 shrink-0 text-brand" />
+				<span class="break-all font-semibold text-ink">{org.email}</span>
+			</a>
+
+			<h2 class="m-0 mt-10 mb-5 text-2xl font-extrabold text-ink">{copy.social}</h2>
+			<ul class="m-0 grid list-none grid-cols-2 gap-3 p-0">
+				{social.map(({ href, icon, label }) => (
+					<li>
+						<a href={href} target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 border border-brand/15 p-3 font-semibold text-ink transition-colors hover:border-brand/40">
+							<Icon name={icon} class="h-5 w-5 shrink-0 text-brand" />
+							{label}
+						</a>
+					</li>
+				))}
+			</ul>
+		</section>
+
+		<section aria-labelledby="office">
+			<h2 id="office" class="m-0 mb-5 text-2xl font-extrabold text-ink">{copy.office}</h2>
+			<address class="border border-brand/15 p-5 not-italic text-muted">
+				<strong class="block text-ink">{org.name}</strong>
+				{org.legalForm[lang]}<br />
+				{t('org.taxId')} {org.taxId}<br />
+				{org.address[lang]}
+			</address>
+		</section>
+	</main>
+</Layout>

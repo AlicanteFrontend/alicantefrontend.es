@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { compiledContent } from '../../CODE_OF_CONDUCT.md';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+// CODE_OF_CONDUCT.md contains the Spanish version followed by the English one, separated by a horizontal rule.
+const [es, en] = (await compiledContent()).split(/<hr\s*\/?>/);
+const content = { es, en }[lang];
+const title = lang === 'es' ? 'Código de conducta — Alicante Frontend' : 'Code of conduct — Alicante Frontend';
+---
+
+<Layout title={title} lang={lang} page="conduct">
+	<main class="mx-auto max-w-3xl px-5 py-12 pb-20">
+		<article class="prose prose-lg max-w-none prose-headings:text-ink prose-headings:font-bold prose-a:text-brand hover:prose-a:text-brand-dark prose-strong:text-ink" set:html={content} />
+	</main>
+</Layout>

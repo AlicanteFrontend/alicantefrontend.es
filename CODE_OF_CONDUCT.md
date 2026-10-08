@@ -93,80 +93,80 @@ Este código de conducta se distribuye bajo una [licencia Creative Commons Attri
 
 ## 1. Purpose
 
-Alicante Frontend is a community of developers from Alicante and surrounding areas without profit. The purpose of this community is to share knowledge and experiences about development that we usually enjoy and suffer in our day to day life.
-The main objective of this community is to be inclusive with the greatest number of collaborators, regardless of gender, sexual orientation, ability, ethnicity, socioeconomic conditions and religion (or lack of it).
+Alicante Frontend is a nonprofit community of frontend developers from Alicante and the surrounding area. The purpose of this community is to share knowledge and experiences about the development work we enjoy, and sometimes suffer through, in our day-to-day lives.
+A core goal of this community is to be inclusive of as many contributors as possible, regardless of gender, sexual orientation, ability, ethnicity, socioeconomic status or religion (or lack thereof).
 
-This code of conduct outlines our expectations for all who participate in our community, as well as the consequences of unacceptable behavior.
+This code of conduct outlines our expectations for everyone who participates in our community, as well as the consequences of unacceptable behavior.
 
-We invite all those who participate in Alicante Frontend to help us to create safe and positive experiences for all.
+We invite everyone who takes part in Alicante Frontend to help us create safe and positive experiences for all.
 
-## 2. Civics in open source
+## 2. Civility in open source
 
-A complementary goal of this code of conduct is to increase citizenship in the open source community, encouraging participants to recognize and strengthen the relationships between our actions and their effects in our community.
+A complementary goal of this code of conduct is to promote civility in the open source community by encouraging participants to recognize and strengthen the relationship between our actions and their effects on our community.
 
-The topics within the community are related to the field of frontend development and the IT sector, if one or a member of the community could feel violent because of a topic that has nothing to do with the development or the sector of the computer science, and asked to redirect the conversation, would return to the subjects planned in the agenda of the day. Only the #random channel of Slack will be used for more transversal topics and always complying with the rest of the points of this code.
+Discussions within the community revolve around frontend development and the IT sector. If a member of the community feels uncomfortable because of a topic that has nothing to do with development or the IT sector and asks to redirect the conversation, we will return to the topics planned on the day's agenda. The #random channel on Slack is the only place for more general topics, and even there the rest of this code applies.
 
-Active or passive participation in group activities are optional and do not entail obligation.
-Any person who decides to speak, may do so provided that he / she is respecting the opinions of others and complying with the rest of the points of this code of conduct.
+Active or passive participation in group activities is optional and entails no obligation.
+Anyone who decides to speak may do so, provided they respect the opinions of others and comply with the rest of this code of conduct.
 
-If you see someone who is making a major effort to help make our community welcoming, friendly and encourage all participants to contribute the most, we want to know.
+If you see someone making an outstanding effort to help make our community welcoming and friendly and to encourage all participants to contribute their best, we want to hear about it.
 
 ## 3. Expected behavior
 
-The following behaviors are expected and requested by all the members of the community:
+The following behaviors are expected and requested of all members of the community:
 
-* Participate in an authentic and active way. By doing so, it contributes to the health and longevity of this community.
+* Participate in an authentic and active way. In doing so, you contribute to the health and longevity of this community.
 * Show consideration and respect in your speech and actions.
-* Try to collaborate before entering into conflict.
-* Do not behave or speak in a degrading, discriminatory or harassing manner.
-* Keep in mind the environment and the other participants. Alert community leaders if they perceive a dangerous situation, suffering or anguish in any person, or violations of this code of conduct, even if they seem inconsequential.
-* Remember that the facilities in which an event of this community is held can be shared with more people; please remember to be respectful with all users of these facilities.
+* Attempt collaboration before conflict.
+* Refrain from degrading, discriminatory or harassing behavior and speech.
+* Be mindful of your surroundings and of your fellow participants. Alert community leaders if you notice a dangerous situation, someone in distress, or violations of this code of conduct, even if they seem inconsequential.
+* Remember that the venues where community events take place may be shared with other people; please be respectful of all users of these venues.
 
 ## 4. Unacceptable behavior
 
 The following behaviors are considered harassment and are unacceptable within our community:
 
 * Violence, threats of violence or violent language directed against another person.
-* Jokes and language sexist, racist, homophobic, transphobic, capacitist or discriminatory in any way.
-* Publish or exhibit violent or sexually explicit material.
-* Publish or threaten to publish data identifying other people ([_doxing_](https://en.wikipedia.org/wiki/Doxing)).
+* Sexist, racist, homophobic, transphobic, ableist or otherwise discriminatory jokes and language.
+* Posting or displaying violent or sexually explicit material.
+* Posting or threatening to post other people's personally identifying information ([_doxing_](https://en.wikipedia.org/wiki/Doxing)).
 * Personal insults, particularly those related to gender, sexual orientation, race, religion or disability.
-* Photograph or inappropriate recording.
-* Inappropriate physical contact. Make sure you have someone's consent before touching him.
-* Unwanted sexual attention. Including sexualized comments or jokes, inappropriate physical contact (which also includes sexual groping or touching) and unwelcome sexual advances.
-* Deliberate intimidation, stalking or persecution (online or in person).
-* Contemplation continued unwanted or inappropriate.
-* Defend or encourage any of the above behaviors.
-* Continuously disrupting community events, including talks and presentations.
+* Inappropriate photography or recording.
+* Inappropriate physical contact. Make sure you have someone's consent before touching them.
+* Unwelcome sexual attention. This includes sexualized comments or jokes, inappropriate physical contact (including groping or touching of a sexual nature) and unwelcome sexual advances.
+* Deliberate intimidation, stalking or following (online or in person).
+* Sustained, unwelcome or inappropriate staring.
+* Advocating for or encouraging any of the above behaviors.
+* Sustained disruption of community events, including talks and presentations.
 
 ## 5. Consequences of unacceptable behavior
 
-These unacceptable behaviors will not be tolerated in any participant of the event including assistants, sponsors, volunteers or personnel of the organization.
+Unacceptable behavior will not be tolerated from any participant in an event, including attendees, sponsors, volunteers and organizing staff.
 
-The measures that will be taken for an infraction will depend on the context. They may be:
+The measures taken in response to a violation will depend on the context. They may include:
 
-* Expulsion of the offender from the community for a serious infraction.
-* Expulsion of the offender from the community for the recurrence of infractions.
-* Notice for infringement and apology request to the community.
-* Notice for minor infringement.
+* Expulsion of the offender from the community for a serious violation.
+* Expulsion of the offender from the community for repeated violations.
+* A warning for the violation and a request for an apology to the community.
+* A warning for a minor violation.
 
-## 6. Guidelines for making a complaint
+## 6. Guidelines for filing a complaint
 
-If you are a victim or witness of unacceptable behavior, or have any other concerns, please notify a community organizer.
+If you are the victim of or a witness to unacceptable behavior, or have any other concerns, please notify a community organizer.
 
-When contacting, indicate the name of the event and in which part of the facility the violation of the code of conduct is occurring, and briefly explain the nature of the incident.
+When reporting an incident, state the name of the event and where in the venue the violation of the code of conduct is taking place, and briefly describe the nature of the incident.
 
-Community organizers will facilitate contact by community members with local authorities and will help, in any other way, those who are victims of unacceptable behavior, to feel safe.
+Community organizers will help community members contact local authorities and will otherwise assist anyone who has been the victim of unacceptable behavior to feel safe.
 
-## 7. How to appeal complaints
+## 7. How to appeal a complaint
 
-If you believe that you have been falsely or unjustly accused of violating this code of conduct, you must notify the community organizers, with a concise description of your complaint. This will be managed in accordance with our current policies.
+If you believe you have been falsely or unfairly accused of violating this code of conduct, you should notify the community organizers with a concise description of your grievance. Your appeal will be handled in accordance with our current policies.
 
 ## 8. Scope
 
-We hope that all members of the community (partners as well as attendees of the association's events, sponsors, volunteers or staff of the organization) comply with this code of conduct in all areas of the community -real and virtual-, as well as in all personal communications related to community matters.
+We expect all members of the community (association members as well as attendees at the association's events, sponsors, volunteers and organizing staff) to abide by this code of conduct in all community spaces, both physical and virtual, as well as in all personal communications relating to community matters.
 
-This code of conduct and its related procedures also apply to unacceptable behaviors that occur outside the scope of community activities when such behavior may affect the safety and well-being of community members.
+This code of conduct and its related procedures also apply to unacceptable behavior that occurs outside the scope of community activities when such behavior may affect the safety and well-being of community members.
 
 ## 9. Contact information
 

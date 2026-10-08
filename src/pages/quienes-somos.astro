@@ -1,18 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Icon } from 'astro-icon/components';
 ---
 
-<Layout title="Quiénes somos — Alicante Frontend">
+<Layout title="Quiénes somos — Alicante Frontend" description="Alicante Frontend es una asociación sin ánimo de lucro dedicada a la divulgación del desarrollo web frontend en Alicante." page="about">
 	<main class="mx-auto max-w-3xl px-5 py-12 pb-20">
-		<a
-			href="/"
-			class="group mb-8 inline-flex items-center gap-2 text-sm font-semibold text-brand transition-colors hover:text-brand-dark"
-		>
-			<Icon name="lucide:arrow-left" class="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1" />
-			Volver al inicio
-		</a>
-
 		<article class="prose prose-lg max-w-none prose-headings:text-ink prose-headings:font-bold prose-a:text-brand hover:prose-a:text-brand-dark prose-strong:text-ink">
 			<h1>Quiénes somos</h1>
 
@@ -111,6 +102,7 @@ import { Icon } from 'astro-icon/components';
 					<strong>Correo de contacto:</strong>{' '}
 					<a href="mailto:alicante.frontend@gmail.com">alicante.frontend@gmail.com</a>
 				</li>
+				<li><strong>Sitio web oficial:</strong> alicantefrontend.es es el dominio oficial y principal de la asociación</li>
 			</ul>
 		</article>
 	</main>
