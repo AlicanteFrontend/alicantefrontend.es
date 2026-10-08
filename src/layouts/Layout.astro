@@ -2,16 +2,26 @@
 import '../styles/global.css';
 import { Schema } from 'astro-seo-schema';
 import type { Graph } from 'schema-dts';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { languages, routes, type Lang, type Page } from '../i18n/ui';
 
 interface Props {
 	title?: string;
+	description?: string;
+	lang?: Lang;
+	page: Page;
 }
-
-const { title = 'Alicante Frontend' } = Astro.props;
 
 const siteUrl = 'https://alicantefrontend.es';
 const description =
 	'El ecosistema Frontend es un caos y ¡nos encanta! Si quieres aprender y compartir sobre desarrollo web orientado al Frontend has llegado al sitio correcto.';
+
+const { title = 'Alicante Frontend', description: pageDescription = description, lang = 'es', page } = Astro.props;
+const canonical = new URL(routes[page][lang], Astro.site).href;
+const ogImage = new URL(lang === 'es' ? '/og.png' : '/en/og.png', Astro.site).href;
+const ogLocales = { es: 'es_ES', en: 'en_US' } as const;
+const schemaLanguages = { es: 'es-ES', en: 'en-US' } as const;
 
 const jsonLd: Graph = {
 	'@context': 'https://schema.org',
@@ -64,8 +74,18 @@ const jsonLd: Graph = {
 			url: `${siteUrl}/`,
 			name: 'Alicante Frontend',
 			description,
-			inLanguage: 'es-ES',
+			inLanguage: Object.values(schemaLanguages),
 			publisher: { '@id': `${siteUrl}/#organization` },
+		},
+		{
+			'@type': 'WebPage',
+			'@id': `${canonical}#webpage`,
+			url: canonical,
+			name: title,
+			description: pageDescription,
+			inLanguage: schemaLanguages[lang],
+			isPartOf: { '@id': `${siteUrl}/#website` },
+			about: { '@id': `${siteUrl}/#organization` },
 		},
 		{
 			'@type': 'EventSeries',
@@ -97,7 +117,7 @@ const jsonLd: Graph = {
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -109,33 +129,48 @@ const jsonLd: Graph = {
 		<title>{title}</title>
 		<meta
 			name="description"
-			content="El ecosistema Frontend es un caos y ¡nos encanta! Si quieres aprender y compartir sobre desarrollo web orientado al Frontend has llegado al sitio correcto."
+			content={pageDescription}
 		/>
 		<meta itemprop="name" content="Alicante Frontend" />
 		<meta
 			itemprop="description"
-			content="El ecosistema Frontend es un caos y ¡nos encanta! Si quieres aprender y compartir sobre desarrollo web orientado al Frontend has llegado al sitio correcto."
+			content={pageDescription}
 		/>
-		<meta itemprop="image" content="/og.png" />
-		<meta name="twitter:card" content="summary" />
+		<meta itemprop="image" content={ogImage} />
+		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@AlicanteFront" />
 		<meta name="twitter:creator" content="@AlicanteFront" />
-		<meta name="twitter:image" content="/og.png" />
+		<meta name="twitter:image" content={ogImage} />
 		<meta name="twitter:image:alt" content="Alicante Frontend Logo" />
 		<meta property="og:site_name" content="Alicante Frontend" />
-		<meta property="og:url" content="https://www.alicantefrontend.es/" />
-		<meta property="og:title" content="Alicante Frontend" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonical} />
+		<link rel="canonical" href={canonical} />
+		{(Object.keys(languages) as Lang[]).map((l) => (
+			<link rel="alternate" hreflang={l} href={new URL(routes[page][l], Astro.site).href} />
+		))}
+		<link rel="alternate" hreflang="x-default" href={new URL(routes[page].es, Astro.site).href} />
+		<meta property="og:title" content={title} />
 		<meta
 			property="og:description"
-			content="El ecosistema Frontend es un caos y ¡nos encanta! Si quieres aprender y compartir sobre desarrollo web orientado al Frontend has llegado al sitio correcto."
+			content={pageDescription}
 		/>
-		<meta property="og:image" content="/og.png" />
-		<meta property="og:locale" content="es_ES" />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:locale" content={ogLocales[lang]} />
+		{(Object.keys(languages) as Lang[]).filter((l) => l !== lang).map((l) => (
+			<meta property="og:locale:alternate" content={ogLocales[l]} />
+		))}
 
 		<script src="https://cdn.usefathom.com/script.js" data-site="FRZKPXBX" defer></script>
 		<Schema item={jsonLd} />
 	</head>
-	<body>
-		<slot />
+	<body class="flex min-h-screen flex-col">
+		<Header lang={lang} page={page} />
+		<div class="flex-1">
+			<slot />
+		</div>
+		<Footer lang={lang} />
 	</body>
 </html>

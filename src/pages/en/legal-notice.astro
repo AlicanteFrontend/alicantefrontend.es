@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { organization as org } from '../../data/organization';
+---
+
+<Layout title="Legal notice & privacy — Alicante Frontend" description="Legal notice and privacy policy of Alicante Frontend." lang="en" page="legal">
+	<PageHero title="Legal notice & privacy" />
+
+	<main class="mx-auto max-w-3xl px-5 py-12 pb-20">
+		<article class="prose prose-lg max-w-none prose-headings:text-ink prose-headings:font-bold prose-a:text-brand hover:prose-a:text-brand-dark prose-strong:text-ink">
+			<h2>Website owner</h2>
+			<p>
+				In accordance with Spanish Law 34/2002 on Information Society Services and Electronic Commerce (LSSI-CE),
+				the owner of this website is <strong>{org.name}</strong>, a nonprofit association with tax ID (NIF) {org.taxId},
+				registered in the {org.registry.en}, with its registered office at {org.address.en}.
+				Email: <a href={`mailto:${org.email}`}>{org.email}</a>.
+			</p>
+
+			<h2>Purpose</h2>
+			<p>
+				This website provides information about the association, its mission and the activities it organizes.
+				Access is free and does not require registration.
+			</p>
+
+			<h2>Data protection</h2>
+			<p>
+				This website does not collect personal data through forms and does not use cookies. To measure visits, we use
+				Fathom Analytics, which does not use cookies or store personal data.
+			</p>
+			<p>
+				If you email us, we will process your data solely to respond to your inquiry, in accordance with Regulation (EU)
+				2016/679 (GDPR) and Spanish Organic Law 3/2018 (LOPDGDD). You can exercise your rights of access, rectification,
+				erasure, objection, restriction and portability by writing to <a href={`mailto:${org.email}`}>{org.email}</a>.
+			</p>
+			<p>
+				Event registrations and talk submissions are handled by third-party services (Meetup, Google Forms), which are
+				subject to their own privacy policies.
+			</p>
+
+			<h2>Intellectual property</h2>
+			<p>
+				The content, logos and graphic elements on this website belong to {org.name} or to their respective authors.
+				Published talks remain the property of their speakers.
+			</p>
+			<p>In the event of any discrepancy, the Spanish version of this notice prevails.</p>
+		</article>
+	</main>
+</Layout>

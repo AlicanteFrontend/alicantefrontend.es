@@ -1,0 +1,48 @@
+---
+import { Icon } from 'astro-icon/components';
+import { organization as org, social } from '../data/organization';
+import { navPages, routes, useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<footer class="border-t border-brand/10 bg-[#f6f9fd] text-sm text-muted">
+	<div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-3">
+		<div>
+			<img src="/alicante-frontend-logo.svg" alt={org.name} class="mb-3 block h-auto w-48" />
+			<p class="m-0">{org.legalForm[lang]}</p>
+			<p class="m-0">{t('org.taxId')} {org.taxId}</p>
+			<p class="m-0">{org.registryShort[lang]}</p>
+			<address class="mt-2 not-italic">{org.address[lang]}</address>
+			<a href={`mailto:${org.email}`} class="text-brand hover:text-brand-dark">{org.email}</a>
+		</div>
+		<nav aria-label={t('footer.navLabel')}>
+			<p class="m-0 mb-2 font-bold text-ink">{t('footer.nav')}</p>
+			<ul class="m-0 list-none space-y-1 p-0">
+				{[...navPages, 'legal' as const].map((key) => (
+					<li><a href={routes[key][lang]} class="hover:text-brand">{t(`nav.${key}`)}</a></li>
+				))}
+			</ul>
+		</nav>
+		<div>
+			<p class="m-0 mb-2 font-bold text-ink">{t('footer.follow')}</p>
+			<ul class="m-0 flex list-none flex-wrap gap-3 p-0">
+				{social.map(({ href, icon, label }) => (
+					<li>
+						<a href={href} target="_blank" rel="noopener noreferrer" aria-label={label} title={label} class="text-brand/70 hover:text-brand">
+							<Icon name={icon} class="h-6 w-6" />
+						</a>
+					</li>
+				))}
+			</ul>
+		</div>
+	</div>
+	<p class="m-0 pb-8 text-center font-medium">
+		{t('footer.madeWith')} <span class="inline-block animate-pulse-heart text-[#ff5b7f]">♥</span> {t('footer.inAlicante')}
+	</p>
+</footer>

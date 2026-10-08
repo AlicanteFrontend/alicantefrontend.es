@@ -1,0 +1,54 @@
+---
+import { navPages, otherLang, routes, useTranslations, type Lang, type Page } from '../i18n/ui';
+
+interface Props {
+	lang: Lang;
+	page: Page;
+}
+
+const { lang, page } = Astro.props;
+const t = useTranslations(lang);
+const alt = otherLang(lang);
+const isHome = page === 'home';
+---
+
+<header class="sticky top-0 z-20 border-b border-brand/10 bg-white/85 backdrop-blur-md">
+	<div
+		class:list={[
+			'mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3 sm:px-6',
+			isHome ? 'justify-center' : 'justify-center md:justify-between',
+		]}
+	>
+		{!isHome && (
+			<a href={routes.home[lang]} class="shrink-0">
+				<img src="/alicante-frontend-logo.svg" alt={t('nav.homeLogo')} class="block h-9 w-auto" />
+			</a>
+		)}
+		<nav aria-label={t('nav.label')}>
+			<ul class="m-0 flex list-none flex-wrap items-center justify-center gap-x-5 gap-y-1 p-0 text-base font-semibold">
+				{navPages.map((key) => (
+					<li>
+						<a
+							href={routes[key][lang]}
+							aria-current={key === page ? 'page' : undefined}
+							class:list={['transition-colors hover:text-brand', key === page ? 'text-brand' : 'text-muted']}
+						>
+							{t(`nav.${key}`)}
+						</a>
+					</li>
+				))}
+				<li>
+					<a
+						href={routes[page][alt]}
+						hreflang={alt}
+						lang={alt}
+						title={t('switch.label')}
+						class="border border-brand/30 px-2 py-0.5 text-sm uppercase text-brand transition-colors hover:border-brand hover:bg-brand hover:text-white"
+					>
+						{alt}
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>

@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+import { organization as org } from '../data/organization';
+import { routes, type Lang } from '../i18n/ui';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const copy = {
+	es: {
+		title: 'Alicante Frontend — Comunidad frontend de Alicante',
+		taglineStart: 'El ecosistema Frontend es un caos y',
+		taglineStrong: '¡nos encanta!',
+		taglineEnd: 'Si quieres aprender y compartir sobre desarrollo web orientado al Frontend has llegado al sitio correcto.',
+		links: ['Próximos eventos', 'Grupo de Telegram', 'Escríbenos', 'Síguenos en LinkedIn'],
+		social: ['Síguenos en X', 'Síguenos en Instagram', 'Suscríbete al canal', 'GitHub'],
+		findUs: 'Encuéntranos también en:',
+		cfpText:
+			'¿Tienes algo que contar? Buscamos personas que quieran compartir su experiencia con la comunidad. Da igual si es tu primera charla o si llevas años en esto: ¡nos encantaría escucharte!',
+		cfpButton: 'Proponer una charla',
+		mission: 'Nuestra misión',
+		sections: [
+			['Quiénes somos', 'Nuestra misión, nuestra historia y los datos de la asociación.'],
+			['Actividades', 'Meetups, charlas, contenido en abierto y comunidad, todo gratuito.'],
+			['Contacto', '¿Quieres colaborar, ceder un espacio o patrocinar? Cuéntanos.'],
+		],
+	},
+	en: {
+		title: 'Alicante Frontend — Frontend community in Alicante',
+		taglineStart: 'The frontend ecosystem is chaos, and',
+		taglineStrong: 'we love it!',
+		taglineEnd: "If you want to learn and share about frontend web development, you've come to the right place.",
+		links: ['Upcoming events', 'Telegram group', 'Email us', 'Follow us on LinkedIn'],
+		social: ['Follow us on X', 'Follow us on Instagram', 'Subscribe to our channel', 'GitHub'],
+		findUs: 'You can also find us on:',
+		cfpText:
+			"Got something to share? We're looking for people who want to share their experience with the community. Whether it's your first talk or you've been doing this for years, we'd love to hear from you! (Talks are usually given in Spanish.)",
+		cfpButton: 'Submit a talk',
+		mission: 'Our mission',
+		sections: [
+			['About us', "Our mission, our history and the association's official details."],
+			['Activities', 'Meetups, talks, open content and community, all free of charge.'],
+			['Contact', 'Want to collaborate, provide a venue or sponsor us? Get in touch.'],
+		],
+	},
+}[lang];
+
+const links = [
+	{ href: 'https://www.meetup.com/es-ES/Alicante-Frontend', icon: 'lucide:calendar-days' },
+	{ href: 'https://t.me/alicantefrontend', icon: 'simple-icons:telegram' },
+	{ href: 'mailto:alicante.frontend@gmail.com', icon: 'lucide:mail' },
+	{ href: 'https://www.linkedin.com/company/alicante-frontend/', icon: 'simple-icons:linkedin' },
+].map((link, i) => ({ ...link, label: copy.links[i] }));
+
+const socialLinks = [
+	{ href: 'https://twitter.com/AlicanteFront', icon: 'simple-icons:x' },
+	{ href: 'https://www.instagram.com/alicantefrontend/', icon: 'simple-icons:instagram' },
+	{ href: 'https://www.youtube.com/AlicanteFrontend', icon: 'simple-icons:youtube' },
+	{ href: 'https://github.com/AlicanteFrontend', icon: 'simple-icons:github' },
+].map((link, i) => ({ ...link, label: copy.social[i] }));
+
+const sections = [
+	{ href: routes.about[lang], icon: 'lucide:users' },
+	{ href: routes.activities[lang], icon: 'lucide:presentation' },
+	{ href: routes.contact[lang], icon: 'lucide:mail' },
+].map((section, i) => ({ ...section, title: copy.sections[i][0], text: copy.sections[i][1] }));
+---
+
+<Layout title={copy.title} lang={lang} page="home" description={`${copy.taglineStart} ${copy.taglineStrong} ${copy.taglineEnd}`}>
+	<main class="flex flex-col items-center px-5 py-14 pb-20">
+		<h1 class="sr-only">Alicante Frontend</h1>
+
+		<img
+			src="/alicante-frontend-logo.svg"
+			alt="Alicante Frontend Logo"
+			class="mb-5 block h-auto w-[540px] max-w-[90%] animate-fade-up [animation:drift_8s_ease-in-out_infinite]"
+		/>
+
+		<p class="max-w-2xl px-4 text-center text-[1.1rem] text-muted mb-12 animate-fade-up [animation-delay:150ms]">
+			{copy.taglineStart}{' '}
+			<strong class="font-bold text-ink">{copy.taglineStrong}</strong>{' '}
+			{copy.taglineEnd}
+		</p>
+
+		<ul class="flex flex-col sm:flex-row flex-wrap justify-center w-full max-w-[1200px] gap-4 animate-fade-up [animation-delay:300ms] list-none p-0">
+			{links.map(({ href, icon, label }) => (
+				<li>
+					<a
+						target="_blank"
+						rel="noopener noreferrer"
+						href={href}
+						class="sm:w-56 group flex min-h-[130px] flex-col items-center justify-center gap-2.5 border border-brand/15 bg-white/80 px-3 py-6 text-center text-[0.95rem] font-semibold text-ink shadow-[0_12px_30px_rgba(24,133,214,0.1)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-brand/40 hover:bg-white hover:shadow-[0_22px_45px_rgba(24,133,214,0.22)]"
+					>
+						<Icon name={icon} class="h-8 w-8 text-brand transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6" />
+						<span class="whitespace-nowrap">{label}</span>
+					</a>
+				</li>
+			))}
+		</ul>
+
+		<div class="mt-8 flex flex-col items-center gap-4 text-center font-medium text-muted animate-fade-up [animation-delay:450ms]">
+			<p class="m-0 text-base text-muted">{copy.findUs}</p>
+			<ul class="flex items-center justify-center gap-5 list-none p-0 m-0">
+				{socialLinks.map(({ href, icon, label }) => (
+					<li>
+						<a
+							target="_blank"
+							rel="noopener noreferrer"
+							href={href}
+							aria-label={label}
+							title={label}
+							class="group flex h-12 w-12 items-center justify-center rounded-full text-brand/60 transition-all duration-300 hover:-translate-y-0.5 hover:text-brand"
+						>
+							<Icon name={icon} class="h-7 w-7 transition-transform duration-300 group-hover:scale-110" />
+						</a>
+					</li>
+				))}
+			</ul>
+		</div>
+
+		<div class="mt-16 max-w-[640px] text-center animate-fade-up [animation-delay:450ms]">
+			<p class="mb-6 text-base text-muted">{copy.cfpText}</p>
+			<a
+				href="/cfp" target="_blank"
+				class="group inline-flex items-center gap-2  bg-brand px-7 py-3.5 text-[0.95rem] font-semibold text-white shadow-[0_8px_20px_rgba(24,133,214,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-dark hover:text-white hover:shadow-[0_14px_28px_rgba(24,133,214,0.4)]"
+			>
+				{copy.cfpButton}
+				<Icon name="lucide:arrow-right" class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+			</a>
+		</div>
+
+		<section class="mt-20 w-full max-w-3xl text-center" aria-labelledby="mision">
+			<h2 id="mision" class="mb-4 text-2xl font-extrabold text-ink">{copy.mission}</h2>
+			<p class="m-0 text-lg text-muted">{org.mission[lang]}</p>
+		</section>
+
+		<ul class="mt-12 grid w-full max-w-5xl list-none grid-cols-1 gap-5 p-0 md:grid-cols-3">
+			{sections.map(({ href, icon, title, text }) => (
+				<li>
+					<a href={href} class="group block h-full border border-brand/15 bg-white p-6 shadow-[0_12px_30px_rgba(24,133,214,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-brand/40">
+						<Icon name={icon} class="mb-3 h-7 w-7 text-brand" />
+						<h3 class="m-0 mb-1 text-lg font-bold text-ink">{title}</h3>
+						<p class="m-0 text-sm text-muted">{text}</p>
+					</a>
+				</li>
+			))}
+		</ul>
+	</main>
+</Layout>

@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import { Icon } from 'astro-icon/components';
+import { routes, type Lang } from '../i18n/ui';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const copy = {
+	es: {
+		title: 'Actividades — Alicante Frontend',
+		description: 'Programas y actividades gratuitas de Alicante Frontend: meetups mensuales, charlas, contenido en abierto y comunidad online.',
+		heading: 'Actividades',
+		lead: 'Todos nuestros programas son gratuitos y abiertos a cualquier persona interesada en el desarrollo web.',
+		programs: [
+			['Meetups mensuales', 'Encuentros presenciales gratuitos en Alicante con charlas técnicas sobre frontend, JavaScript, frameworks, accesibilidad, diseño y herramientas, seguidos de un espacio de networking.', 'Ver próximos eventos'],
+			['Call for Papers abierto', 'Cualquier persona puede proponer una charla. Damos voz tanto a ponentes con experiencia como a quienes se suben al escenario por primera vez.', 'Proponer una charla'],
+			['Contenido en abierto', 'Publicamos las charlas de forma gratuita en nuestro canal de YouTube para que el conocimiento llegue a cualquier persona.', 'Ir al canal'],
+			['Comunidad online', 'Un grupo de Telegram donde resolver dudas, compartir recursos y ofertas de empleo, y mantener el contacto entre encuentros.', 'Unirse al grupo'],
+			['Colaboraciones', 'Colaboramos con otras comunidades técnicas, empresas e instituciones de la provincia para impulsar el ecosistema tecnológico local.', 'Colaborar con nosotros'],
+		],
+	},
+	en: {
+		title: 'Activities — Alicante Frontend',
+		description: 'Free programs and activities by Alicante Frontend: monthly meetups, talks, open content and an online community.',
+		heading: 'Activities',
+		lead: 'All our programs are free of charge and open to anyone interested in web development.',
+		programs: [
+			['Monthly meetups', 'Free in-person events in Alicante with technical talks on frontend development, JavaScript, frameworks, accessibility, design and tooling, followed by a networking session.', 'See upcoming events'],
+			['Open Call for Papers', 'Anyone can submit a talk. We give a voice to experienced speakers and first-time speakers alike.', 'Submit a talk'],
+			['Open content', 'We publish our talks for free on our YouTube channel so that the knowledge can reach everyone.', 'Go to the channel'],
+			['Online community', 'A Telegram group where you can ask questions, share resources and job openings, and stay in touch between events.', 'Join the group'],
+			['Collaborations', 'We collaborate with other tech communities, companies and institutions in the province to boost the local tech ecosystem.', 'Collaborate with us'],
+		],
+	},
+}[lang];
+
+const programs = [
+	{ icon: 'lucide:calendar-days', href: 'https://www.meetup.com/es-ES/Alicante-Frontend' },
+	{ icon: 'lucide:mic', href: '/cfp' },
+	{ icon: 'simple-icons:youtube', href: 'https://www.youtube.com/AlicanteFrontend' },
+	{ icon: 'simple-icons:telegram', href: 'https://t.me/alicantefrontend' },
+	{ icon: 'lucide:handshake', href: routes.contact[lang], internal: true },
+].map((program, i) => {
+	const [title, text, cta] = copy.programs[i];
+	return { ...program, title, text, cta };
+});
+---
+
+<Layout title={copy.title} description={copy.description} lang={lang} page="activities">
+	<PageHero title={copy.heading} lead={copy.lead} />
+
+	<main class="mx-auto max-w-5xl px-4 py-14 sm:px-6">
+		<ul class="m-0 grid list-none gap-6 p-0 md:grid-cols-2">
+			{programs.map(({ icon, title, text, cta, href, internal }) => (
+				<li class="flex flex-col border border-brand/15 bg-white p-6 shadow-[0_12px_30px_rgba(24,133,214,0.06)]">
+					<Icon name={icon} class="mb-3 h-8 w-8 text-brand" />
+					<h2 class="m-0 mb-2 text-xl font-bold text-ink">{title}</h2>
+					<p class="m-0 flex-1 text-muted">{text}</p>
+					<a
+						href={href}
+						{...(internal ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
+						class="mt-4 font-semibold text-brand hover:text-brand-dark"
+					>
+						{cta} →
+					</a>
+				</li>
+			))}
+		</ul>
+	</main>
+</Layout>

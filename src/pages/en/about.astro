@@ -1,0 +1,100 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { organization as org } from '../../data/organization';
+---
+
+<Layout
+	title="About us — Alicante Frontend"
+	description="Alicante Frontend is a nonprofit association dedicated to promoting frontend web development in Alicante, Spain."
+	lang="en"
+	page="about"
+>
+	<main class="mx-auto max-w-3xl px-5 py-12 pb-20">
+		<article class="prose prose-lg max-w-none prose-headings:text-ink prose-headings:font-bold prose-a:text-brand hover:prose-a:text-brand-dark prose-strong:text-ink">
+			<h1>About us</h1>
+
+			<p>
+				<strong>Alicante Frontend</strong> is a nonprofit association based in
+				the province of Alicante, Spain, dedicated to promoting web development,
+				with a special focus on the <em>frontend</em> ecosystem. We are an open,
+				free community with no barriers to entry: anyone interested in learning
+				or sharing knowledge about web development is welcome, whatever their level.
+			</p>
+
+			<h2>Our mission</h2>
+			<p>
+				Our goal is to <strong>foster learning, knowledge sharing and community
+				building</strong> around frontend web development in Alicante and the
+				surrounding area. We do this by organizing free technical events, giving a
+				voice to both new and experienced speakers, and maintaining an inclusive space
+				where people can share questions, projects and professional experiences.
+			</p>
+			<p>
+				We believe knowledge should be accessible to everyone, which is why all
+				our activities are <strong>open and free of charge</strong>.
+			</p>
+
+			<h2>Our history</h2>
+			<p>
+				Alicante Frontend was founded in <strong>October 2017</strong> by a group of
+				people passionate about web development who wanted a technical meeting
+				point in the province. Since then, the community has grown steadily through
+				its monthly meetups and its presence on social media.
+			</p>
+			<p>
+				In <strong>September 2019</strong>, the community was formally incorporated
+				as a <strong>nonprofit association</strong> to give the project continuity
+				and stability and to make it possible to collaborate with companies,
+				institutions and other communities.
+			</p>
+
+			<h2>What we do</h2>
+			<ul>
+				<li>
+					<strong>Free monthly meetups</strong> with technical talks on frontend
+					development, JavaScript, frameworks, accessibility, design, tooling and
+					everything related to web development.
+				</li>
+				<li>
+					<strong>Open Call for Papers (CFP)</strong>: anyone can submit a talk and
+					share their experience with the community, whether or not it is their
+					first time on stage.
+				</li>
+				<li>
+					<strong>Online community</strong> through our Telegram group and social
+					media, where we answer questions, share job openings and resources, and
+					stay in touch between events.
+				</li>
+				<li>
+					<strong>Collaboration</strong> with other tech communities, companies and
+					institutions in the province to boost the local tech ecosystem.
+				</li>
+			</ul>
+			<p>Find out more on our <a href="/en/activities/">activities page</a>.</p>
+
+			<h2>How to take part</h2>
+			<p>
+				You can join our events through{' '}
+				<a href="https://www.meetup.com/es-ES/Alicante-Frontend" target="_blank" rel="noopener noreferrer">Meetup</a>,{' '}
+				chat with the community in our{' '}
+				<a href="https://t.me/alicantefrontend" target="_blank" rel="noopener noreferrer">Telegram group</a>{' '}
+				or email us at{' '}
+				<a href={`mailto:${org.email}`}>{org.email}</a>.{' '}
+				Want to give a talk? Submit it through our{' '}
+				<a href="/cfp" target="_blank" rel="noopener noreferrer">Call for Papers</a>.
+				Our events are usually held in Spanish.
+			</p>
+
+			<h2>Organization details</h2>
+			<p>In keeping with the transparency expected of a nonprofit organization, these are our official details:</p>
+			<ul>
+				<li><strong>Name:</strong> {org.name} ({org.legalForm.en.toLowerCase()})</li>
+				<li><strong>Tax ID (NIF):</strong> {org.taxId}</li>
+				<li><strong>Registration:</strong> {org.registry.en}</li>
+				<li><strong>Registered office:</strong> {org.address.en}</li>
+				<li><strong>Contact email:</strong> <a href={`mailto:${org.email}`}>{org.email}</a></li>
+				<li><strong>Official website:</strong> alicantefrontend.es is the association's official and primary domain</li>
+			</ul>
+		</article>
+	</main>
+</Layout>
