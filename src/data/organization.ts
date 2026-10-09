@@ -11,7 +11,7 @@ export const organization = {
 		es: 'Calle Goya, 14, Planta 2, Puerta F, 03690 San Vicente del Raspeig (Alicante), España',
 		en: 'Calle Goya, 14, Planta 2, Puerta F, 03690 San Vicente del Raspeig (Alicante), Spain',
 	},
-	email: 'alicante.frontend@gmail.com',
+	email: 'hola@alicantefrontend.es',
 	url: 'https://alicantefrontend.es',
 	mission: {
 		es: 'Fomentar el aprendizaje, el intercambio de conocimiento y la creación de comunidad en torno al desarrollo web frontend en Alicante y su entorno, mediante encuentros técnicos gratuitos y abiertos a todas las personas.',

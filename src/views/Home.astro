@@ -52,7 +52,7 @@ const copy = {
 const links = [
 	{ href: 'https://www.meetup.com/es-ES/Alicante-Frontend', icon: 'lucide:calendar-days' },
 	{ href: 'https://t.me/alicantefrontend', icon: 'simple-icons:telegram' },
-	{ href: 'mailto:alicante.frontend@gmail.com', icon: 'lucide:mail' },
+	{ href: `mailto:${org.email}`, icon: 'lucide:mail' },
 	{ href: 'https://www.linkedin.com/company/alicante-frontend/', icon: 'simple-icons:linkedin' },
 ].map((link, i) => ({ ...link, label: copy.links[i] }));
 

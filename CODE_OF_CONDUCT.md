@@ -79,7 +79,7 @@ Este código de conducta y sus procedimientos relacionados también se aplican a
 
 ## 9. Información de contacto
 
-* Email [alicante.frontend@gmail.com](mailto:alicante.frontend@gmail.com)
+* Email [hola@alicantefrontend.es](mailto:hola@alicantefrontend.es)
 * Twitter [@AlicanteFront](https://twitter.com/AlicanteFront)
 
 
@@ -170,7 +170,7 @@ This code of conduct and its related procedures also apply to unacceptable behav
 
 ## 9. Contact information
 
-* Email [alicante.frontend@gmail.com](mailto:alicante.frontend@gmail.com)
+* Email [hola@alicantefrontend.es](mailto:hola@alicantefrontend.es)
 * Twitter [@AlicanteFront](https://twitter.com/AlicanteFront)
 
 ## 10. License and attribution
